@@ -1,0 +1,32 @@
+:root {
+  --background-color: #bdbebf;
+  --alt-background-color: #0c0d0a;
+  --text-color: #736b62;
+  --logo-img: url("../assets/wolf-light.svg");
+
+  --def-font-family: "Expletus Sans", sans-serif;
+
+  --default-transition: all 0.2s ease-in-out;
+  margin: 0;
+  background-color: var(--background-color);
+  transition: var(--default-transition);
+  font-family: var(--def-font-family);
+  color: var(--text-color);
+}
+
+.dark {
+  --background-color: #0c0d0a;
+  --alt-background-color: #bdbebf;
+  --text-color: #594c3b;
+  --logo-img: url("../assets/wolf-dark.svg");
+  transition: var(--default-transition);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+}

@@ -1,0 +1,82 @@
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--alt-background-color);
+  color: var(--text-color);
+}
+
+.navbar h1 {
+  margin: 0 0 0 20px;
+}
+
+.navbar.scrolled {
+  height: 50px;
+  opacity: 0.8;
+}
+
+.navbar.scrolled h1 {
+  font-size: 20px;
+}
+
+.logo-cont {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.logo {
+  width: 100px;
+  height: 119px;
+  background-image: var(--logo-img);
+}
+
+.theme-btn {
+  position: sticky;
+  padding: 5px;
+  top: 50vh;
+  left: 98vw;
+  background-color: var(--background-color);
+  border: 1px solid var(--alt-background-color);
+  border-radius: 5px;
+  color: var(--alt-background-color);
+}
+
+.theme-btn i {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  gap: 30px;
+}
+
+.header-cont {
+  width: 19vw;
+  text-align: center;
+}
+
+.header-cont h1 {
+  font-size: 60px;
+}
+
+.statement-cont {
+  width: 20vw;
+  text-align: center;
+}
