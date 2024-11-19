@@ -2,6 +2,7 @@
   --background-color: #bdbebf;
   --alt-background-color: #0c0d0a;
   --text-color: #736b62;
+  --link-color: #00d157be;
   --logo-img: url("../assets/wolf-light.svg");
 
   --def-font-family: "Expletus Sans", sans-serif;
@@ -18,6 +19,8 @@
   --background-color: #0c0d0a;
   --alt-background-color: #bdbebf;
   --text-color: #594c3b;
+  --link-color: #008839ea;
+
   --logo-img: url("../assets/wolf-dark.svg");
   transition: var(--default-transition);
 }
@@ -30,4 +33,13 @@
 h1,
 p {
   margin: 0;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+a::selection {
+  color: var(--link-color);
 }
