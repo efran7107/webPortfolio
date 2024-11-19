@@ -86,3 +86,29 @@ body {
   width: 20vw;
   text-align: center;
 }
+
+.site {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.site h1 {
+  background-color: var(--alt-background-color);
+  padding-left: 10px;
+  vertical-align: middle;
+  border-radius: 20px 20px 0 0;
+}
+
+.site img {
+  width: 250px;
+}
+
+.site-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: var(--alt-background-color);
+  border-radius: 0 0 20px 20px;
+}
