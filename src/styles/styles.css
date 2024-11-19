@@ -13,19 +13,24 @@ body {
   align-items: center;
   background-color: var(--alt-background-color);
   color: var(--text-color);
+  transition: var(--default-transition);
 }
 
 .navbar h1 {
   margin: 0 0 0 20px;
+  transition: var(--default-transition);
 }
 
 .navbar.scrolled {
   height: 50px;
-  opacity: 0.8;
+  opacity: 0.5;
+  transition: var(--default-transition);
 }
 
 .navbar.scrolled h1 {
   font-size: 20px;
+  color: var(--background-color);
+  transition: var(--default-transition);
 }
 
 .logo-cont {
@@ -42,10 +47,11 @@ body {
 }
 
 .theme-btn {
+  cursor: pointer;
   position: sticky;
   padding: 5px;
   top: 50vh;
-  left: 98vw;
+  left: 97vw;
   background-color: var(--background-color);
   border: 1px solid var(--alt-background-color);
   border-radius: 5px;
