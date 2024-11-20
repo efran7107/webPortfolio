@@ -22,6 +22,15 @@ body {
   transition: var(--default-transition);
 }
 
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar a::selection{
+  color: var(--text-color);
+}
+
 .navbar.scrolled {
   height: 50px;
   opacity: 0.5;
@@ -35,7 +44,7 @@ body {
 }
 
 .logo-cont {
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -51,7 +60,6 @@ body {
   cursor: pointer;
   position: sticky;
   padding: 5px;
-  top: 50%;
   left: 97vw;
   background-color: var(--background-color);
   border: 1px solid var(--alt-background-color);
