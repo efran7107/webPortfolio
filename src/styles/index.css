@@ -2,7 +2,9 @@
   --background-color: #bdbebf;
   --alt-background-color: #0c0d0a;
   --text-color: #736b62;
+  --alt-text-color: #594c3b;
   --link-color: #00d157be;
+  --selected-theme: #30aa00;
   --logo-img: url("../assets/wolf-light.svg");
 
   --def-font-family: "Expletus Sans", sans-serif;
@@ -19,6 +21,7 @@
   --background-color: #0c0d0a;
   --alt-background-color: #bdbebf;
   --text-color: #594c3b;
+  --alt-text-color: #736b62;
   --link-color: #008839ea;
 
   --logo-img: url("../assets/wolf-dark.svg");
@@ -30,8 +33,13 @@
   margin: 0 auto;
 }
 
+input {
+  font-family: var(--def-font-family);
+}
+
 h1,
-p {
+p,
+h4 {
   margin: 0;
 }
 
