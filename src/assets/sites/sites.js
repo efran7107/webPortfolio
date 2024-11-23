@@ -1,6 +1,7 @@
 const sites = () => {
   return [
     {
+        id: 0,
       name: "Simple js Tic Tac Toe",
       site: "https://tic-tac-toe-sandy-seven.vercel.app/",
       github: "https://github.com/efran7107/TicTacToe/tree/main",
@@ -11,6 +12,7 @@ const sites = () => {
       img: "./src/assets/site-screenshots/simpleJsTTT.png",
     },
     {
+        id: 1,
       name: "Vite React TicTacToe app",
       site: "https://tic-tac-toe-vite-app-eight.vercel.app/",
       github: "https://github.com/efran7107/TicTacToeViteApp/tree/main",
