@@ -4,6 +4,10 @@ const sitesCont = document.getElementById("sitesCont");
 const sitesData = sites();
 const body = document.querySelector("body");
 
+const closeModal = (modal) => {
+  body.removeChild(modal);
+}
+
 const activeModal = (cardId) => {
   const availSite = sitesData.find((site) => site.id.toString() === cardId);
   const { id, name, img, description, site, github } = availSite;
@@ -56,15 +60,22 @@ const activeModal = (cardId) => {
   siteModalContent.appendChild(siteModalLinks);
 
   siteModalContainer.appendChild(siteModalContent);
+  const closeIcon = document.createElement("i");
+  closeIcon.classList.add("fa-solid", "fa-xmark");
+  closeIcon.id = "closeIcon";
+  
+  siteModalContainer.appendChild(closeIcon);
 
   siteModal.appendChild(siteModalContainer);
+  
   body.appendChild(siteModal);
-
+  siteModal.addEventListener("click", () => {
+    closeModal(siteModal);
+  })
 }
 
 
 sitesData.forEach((availSite) => {
-  //create card
   const { id, name, img, shortDescription, site } = availSite;
 
   const siteCard = document.createElement("div");
@@ -109,3 +120,9 @@ const siteCards = document.querySelectorAll(".site");
 siteCards.forEach((card) => {
   card.addEventListener("click", () => activeModal(card.id));
 })
+const closeIcon = document.querySelector(".fa-xmark");
+if(closeIcon){
+  closeIcon.addEventListener("click", () => {
+    closeModal(document.querySelector(".site-modal"));
+  })
+}

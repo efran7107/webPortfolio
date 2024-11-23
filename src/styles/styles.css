@@ -169,7 +169,7 @@ body {
 }
 
 .site-modal {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -177,6 +177,32 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  animation: modalEnterence .3s ease-in forwards;
+}
+
+.site-modal-container {
+  position: relative;
+  width: 600px;
+  background-color: var(--alt-background-color);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-modal-container i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer
+}
+
+.site-modal-container img {
+  width: 100%;
 }
 
 
@@ -188,5 +214,14 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes modalEnterence {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
