@@ -16,6 +16,7 @@ body {
   color: var(--text-color);
   transition: var(--default-transition);
   padding: 0 20px;
+  box-shadow: 0px 10px 10px 10px var(--alt-background-color);
 }
 
 .navbar h1 {
@@ -27,7 +28,7 @@ body {
   color: var(--text-color);
 }
 
-.navbar a::selection{
+.navbar a::selection {
   color: var(--text-color);
 }
 
@@ -53,23 +54,25 @@ body {
 .logo {
   width: 100px;
   height: 119px;
+  filter: var(--default-drop-shadow);
   background-image: var(--logo-img);
   animation: siteEnterence 1s ease-in forwards;
 }
 
 .theme-tab-cont {
   position: fixed;
-    display: flex;
-    align-items: stretch;
-    gap: 10px;
-    width: fit-content;
-    background-color: var(--alt-background-color);
-    color: var(--text-color);
-    padding: 5px;
-    border-radius: 10px 0 0 10px;
-    right: -125px;
-    top: 50vh;
-    transition: var(--default-transition);
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: fit-content;
+  background-color: var(--alt-background-color);
+  color: var(--text-color);
+  padding: 5px;
+  border-radius: 10px 0 0 10px;
+  right: -125px;
+  top: 50vh;
+  transition: var(--default-transition);
+  box-shadow: 5px 5px 10px var(--alt-background-color);
 }
 
 .theme-tab-cont.active {
@@ -85,11 +88,10 @@ body {
   align-items: center;
 }
 
-
 .theme-changer {
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .theme-btns {
@@ -133,6 +135,11 @@ body {
   text-align: center;
 }
 
+.header-cont h1,
+.statement-cont p {
+  text-shadow: 0px 0px 80px var(--alt-background-color);
+}
+
 .sites-cont {
   margin: 150px 0;
   width: 100%;
@@ -140,7 +147,6 @@ body {
   flex-wrap: wrap;
   gap: 10%;
   animation: siteEnterence 1s ease-in forwards;
-  
 }
 
 .site {
@@ -150,6 +156,13 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
+  box-shadow: 0px 0px 100px -50px var(--alt-background-color);
+  transition: var(--default-transition);
+}
+
+.site:hover {
+  box-shadow: 0px 0px 100px 0px var(--alt-background-color);
+  transition: var(--default-transition);
 }
 
 .site h1 {
@@ -179,7 +192,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
-  animation: modalEnterence .3s ease-in forwards;
+  animation: modalEnterence 0.3s ease-in forwards;
 }
 
 .site-modal-container {
@@ -198,13 +211,12 @@ body {
   top: 20px;
   right: 20px;
   font-size: 25px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .site-modal-container img {
   width: 100%;
 }
-
 
 @keyframes siteEnterence {
   0% {

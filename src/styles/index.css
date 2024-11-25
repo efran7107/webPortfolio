@@ -9,6 +9,8 @@
 
   --def-font-family: "Expletus Sans", sans-serif;
 
+  --default-drop-shadow: drop-shadow(0px 10px 20px var(--alt-background-color));
+
   --default-transition: all 0.2s ease-in-out;
   margin: 0;
   background-color: var(--background-color);

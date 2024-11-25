@@ -1,23 +1,25 @@
-
 const root = document.documentElement;
+const head = document.head;
 const rootClasses = root.classList;
 const nav = document.getElementById("nav");
 const themeBtns = document.querySelectorAll(".theme-btns");
 const themeTab = document.querySelector(".theme-tab-cont");
-const tab = document.getElementById('tab');
-const lightBtn = document.getElementById('light');
-const darkBtn = document.getElementById('dark');
+const tab = document.getElementById("tab");
+const lightBtn = document.getElementById("light");
+const darkBtn = document.getElementById("dark");
 
+const lightIcon = "./src/assets/wolf-light.svg";
+const darkIcon = "./src/assets/wolf-dark.svg";
 
-const tabLeft = document
-.createElement('i')
-tabLeft.classList.add('fa-solid', 'fa-chevron-left')
-tabLeft.id = 'tabLeft'
+const siteIcon = head.querySelector('link[rel="shortcut icon"]');
 
-const tabRight = document
-.createElement('i')
-tabRight.classList.add('fa-solid', 'fa-chevron-right')
-tabRight.id = 'tabRight'
+const tabLeft = document.createElement("i");
+tabLeft.classList.add("fa-solid", "fa-chevron-left");
+tabLeft.id = "tabLeft";
+
+const tabRight = document.createElement("i");
+tabRight.classList.add("fa-solid", "fa-chevron-right");
+tabRight.id = "tabRight";
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
@@ -26,7 +28,6 @@ window.addEventListener("scroll", () => {
     nav.classList.remove("scrolled");
   }
 });
-
 
 const addToLocalStorage = (key) => {
   if (!localStorage.getItem("theme")) {
@@ -38,16 +39,16 @@ const addToLocalStorage = (key) => {
 
 const getTheme = () => {
   if (localStorage.getItem("theme")) {
-    if(localStorage.getItem('thene') === 'dark'){
-      if(lightBtn.classList.contains('active')){
-        lightBtn.classList.remove('active');
+    if (localStorage.getItem("theme") === "dark") {
+      if (lightBtn.classList.contains("active")) {
+        lightBtn.classList.remove("active");
       }
-      darkBtn.classList.add('active')
-    }else{
-      if(darkBtn.classList.contains('active')){
-      darkBtn.classList.remove('active');
-    }
-      lightBtn.classList.add('active')
+      darkBtn.classList.add("active");
+    } else {
+      if (darkBtn.classList.contains("active")) {
+        darkBtn.classList.remove("active");
+      }
+      lightBtn.classList.add("active");
     }
     return localStorage.getItem("theme");
   }
@@ -64,27 +65,27 @@ const changeTheme = (theme) => {
   const curTheme = rootClasses[0];
   switch (curTheme) {
     case "dark":
-      if(curTheme === theme){
+      if (curTheme === theme) {
         return;
       }
       rootClasses.remove("dark");
       rootClasses.add("light");
-      if(darkBtn.classList.contains('active')){
-        darkBtn.classList.remove('active');
+      if (darkBtn.classList.contains("active")) {
+        darkBtn.classList.remove("active");
       }
-      lightBtn.classList.add('active')
+      lightBtn.classList.add("active");
       addToLocalStorage("light");
       break;
     case "light":
-      if(curTheme === theme){
+      if (curTheme === theme) {
         return;
       }
       rootClasses.remove("light");
       rootClasses.add("dark");
-      if(lightBtn.classList.contains('active')){
-        lightBtn.classList.remove('active');
+      if (lightBtn.classList.contains("active")) {
+        lightBtn.classList.remove("active");
       }
-      darkBtn.classList.add('active')
+      darkBtn.classList.add("active");
       addToLocalStorage("dark");
       break;
   }
@@ -92,31 +93,36 @@ const changeTheme = (theme) => {
 
 const addActiveClass = (isAdding) => {
   if (isAdding) {
-    if(themeTab.classList.contains('active')){
+    if (themeTab.classList.contains("active")) {
       return;
     }
     themeTab.classList.add("active");
     tab.removeChild(tabLeft);
     tab.appendChild(tabRight);
-    
   } else {
-    if(!themeTab.classList.contains('active')){
+    if (!themeTab.classList.contains("active")) {
       return;
     }
     themeTab.classList.remove("active");
     tab.removeChild(tabRight);
     tab.appendChild(tabLeft);
   }
+};
+
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  siteIcon.setAttribute("href", darkIcon);
+} else {
+  siteIcon.setAttribute("href", lightIcon);
 }
 
 const [light, dark] = themeBtns;
 
-tabLeft.addEventListener("click", ()=> addActiveClass(true))
-tabRight.addEventListener("click", ()=> addActiveClass(false))
+tabLeft.addEventListener("click", () => addActiveClass(true));
+tabRight.addEventListener("click", () => addActiveClass(false));
 
 light.addEventListener("click", () => changeTheme("light"));
 dark.addEventListener("click", () => changeTheme("dark"));
 
-tab.appendChild(tabLeft)
+tab.appendChild(tabLeft);
 
 root.classList.add(getTheme());
