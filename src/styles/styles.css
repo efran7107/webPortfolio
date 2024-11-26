@@ -137,7 +137,7 @@ body {
 
 .header-cont h1,
 .statement-cont p {
-  text-shadow: 0px 0px 80px var(--alt-background-color);
+  text-shadow: 0px 0px 140px var(--alt-background-color);
 }
 
 .sites-cont {
