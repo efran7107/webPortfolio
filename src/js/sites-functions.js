@@ -5,14 +5,17 @@ const sitesData = sites();
 const body = document.querySelector("body");
 
 const closeModal = (modal) => {
-  body.removeChild(modal);
+  modal.classList.remove("active");
+  setTimeout(() => {
+    modal.remove();  
+  }, 2000)  
 }
 
 const activeModal = (cardId) => {
   const availSite = sitesData.find((site) => site.id.toString() === cardId);
   const { id, name, img, description, site, github } = availSite;
   const siteModal = document.createElement("div");
-  siteModal.classList.add("site-modal");
+  siteModal.classList.add("site-modal", 'active');
   siteModal.id = id;
 
   const siteModalContainer = document.createElement("div");
