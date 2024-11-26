@@ -11,7 +11,7 @@
 
   --default-drop-shadow: drop-shadow(0px 10px 20px var(--alt-background-color));
 
-  --default-transition: all 0.2s ease-in-out;
+  --default-transition: all 0.3s ease-in-out;
   margin: 0;
   background-color: var(--background-color);
   transition: var(--default-transition);
