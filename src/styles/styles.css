@@ -74,6 +74,7 @@ body {
   top: 50vh;
   transition: var(--default-transition);
   box-shadow: 5px 5px 10px var(--alt-background-color);
+  z-index: 1;
 }
 
 .theme-tab-cont.active {
@@ -123,7 +124,7 @@ body {
 }
 
 .header-cont {
-  width: 19vw;
+  width: 80%;
   text-align: center;
 }
 
@@ -132,7 +133,7 @@ body {
 }
 
 .statement-cont {
-  width: 20vw;
+  width: 50%;
   text-align: center;
 }
 
@@ -166,7 +167,7 @@ body {
   transition: var(--default-transition);
 }
 
-.site h1 {
+.site h3 {
   padding-left: 10px;
   vertical-align: middle;
 }

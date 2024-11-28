@@ -85,7 +85,7 @@ sitesData.forEach((availSite) => {
   siteCard.classList.add("site");
   siteCard.id = id;
 
-  const header = document.createElement("h1");
+  const header = document.createElement("h3");
   header.textContent = name;
 
   const siteImg = document.createElement("img");
