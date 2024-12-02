@@ -1,7 +1,7 @@
 const sites = () => {
   return [
     {
-        id: 0,
+      id: 0,
       name: "Simple js Tic Tac Toe",
       site: "https://tic-tac-toe-sandy-seven.vercel.app/",
       github: "https://github.com/efran7107/TicTacToe/tree/main",
@@ -12,7 +12,7 @@ const sites = () => {
       img: "./src/assets/site-screenshots/simpleJsTTT.png",
     },
     {
-        id: 1,
+      id: 1,
       name: "Vite React TicTacToe app",
       site: "https://tic-tac-toe-vite-app-eight.vercel.app/",
       github: "https://github.com/efran7107/TicTacToeViteApp/tree/main",
@@ -20,6 +20,26 @@ const sites = () => {
       description:
         "A continuous tic tac toe game that only ends with a winner. Developed with vite and react. Has the ability to be installed on android devices. Only available on the web for now read the README.md in github for more details.",
       img: "./src/assets/site-screenshots/reactAppTTT.png",
+    },
+    {
+      id: 2,
+      name: "EBYBBQ Static Prototype (WIP)",
+      site: "WIP",
+      github: "https://github.com/efran7107/ebybbq",
+      shortDescription: "A static prototype for EBYBBQ",
+      description:
+        "A static prototype for EBYBBQ that is currently WIP. Will be updated.",
+      img: "./src/assets/site-screenshots/ebybbqHTML-JS.png",
+    },
+    {
+      id: 3,
+      name: "Battleship TSX (WIP)",
+      site: "WIP",
+      github: "https://github.com/efran7107/battleshipTSX",
+      shortDescription: "Battleship game in TSX",
+      description:
+        "A Prototype of Battleship game that will allow difficulty vs the cpu.",
+      img: "./src/assets/site-screenshots/battleshipTSX.png",
     },
   ];
 };

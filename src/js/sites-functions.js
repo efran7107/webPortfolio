@@ -7,15 +7,15 @@ const body = document.querySelector("body");
 const closeModal = (modal) => {
   modal.classList.remove("active");
   setTimeout(() => {
-    modal.remove();  
-  }, 2000)  
-}
+    modal.remove();
+  }, 2000);
+};
 
 const activeModal = (cardId) => {
   const availSite = sitesData.find((site) => site.id.toString() === cardId);
   const { id, name, img, description, site, github } = availSite;
   const siteModal = document.createElement("div");
-  siteModal.classList.add("site-modal", 'active');
+  siteModal.classList.add("site-modal", "active");
   siteModal.id = id;
 
   const siteModalContainer = document.createElement("div");
@@ -42,16 +42,15 @@ const activeModal = (cardId) => {
   siteModalLinkCont.textContent = "Link: ";
 
   const siteModalLink = document.createElement("a");
-  siteModalLink.href = site;
+  siteModalLink.href = site === "WIP" ? "#" : site;
   siteModalLink.textContent = site;
-  siteModalLink.target = site;
 
   const githubModalLinkCont = document.createElement("p");
   githubModalLinkCont.textContent = "Github: ";
 
   const githubModalLink = document.createElement("a");
   githubModalLink.href = github;
-  githubModalLink.textContent = github; 
+  githubModalLink.textContent = github;
   githubModalLink.target = github;
 
   githubModalLinkCont.appendChild(githubModalLink);
@@ -66,17 +65,16 @@ const activeModal = (cardId) => {
   const closeIcon = document.createElement("i");
   closeIcon.classList.add("fa-solid", "fa-xmark");
   closeIcon.id = "closeIcon";
-  
+
   siteModalContainer.appendChild(closeIcon);
 
   siteModal.appendChild(siteModalContainer);
-  
+
   body.appendChild(siteModal);
   siteModal.addEventListener("click", () => {
     closeModal(siteModal);
-  })
-}
-
+  });
+};
 
 sitesData.forEach((availSite) => {
   const { id, name, img, shortDescription, site } = availSite;
@@ -102,10 +100,8 @@ sitesData.forEach((availSite) => {
   siteLinkCont.textContent = "Link: ";
 
   const siteLink = document.createElement("a");
-  siteLink.href = site;
   siteLink.textContent = site;
-  siteLink.target = site;
-
+  siteLink.target = site === "WIP" ? "#" : site;
 
   siteLinkCont.appendChild(siteLink);
 
@@ -122,10 +118,10 @@ sitesData.forEach((availSite) => {
 const siteCards = document.querySelectorAll(".site");
 siteCards.forEach((card) => {
   card.addEventListener("click", () => activeModal(card.id));
-})
+});
 const closeIcon = document.querySelector(".fa-xmark");
-if(closeIcon){
+if (closeIcon) {
   closeIcon.addEventListener("click", () => {
     closeModal(document.querySelector(".site-modal"));
-  })
+  });
 }
