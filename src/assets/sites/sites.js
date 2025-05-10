@@ -30,17 +30,7 @@ const sites = () => {
       description:
         "A static prototype for EBYBBQ that is currently WIP. Will be updated.",
       img: "./src/assets/site-screenshots/ebybbqHTML-JS.png",
-    },
-    {
-      id: 3,
-      name: "Battleship TSX (WIP)",
-      site: "WIP",
-      github: "https://github.com/efran7107/battleshipTSX",
-      shortDescription: "Battleship game in TSX",
-      description:
-        "A Prototype of Battleship game that will allow difficulty vs the cpu.",
-      img: "./src/assets/site-screenshots/battleshipTSX.png",
-    },
+    }
   ];
 };
 
